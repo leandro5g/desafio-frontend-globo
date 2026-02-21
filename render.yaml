@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: desafio-frontend-globo
+    env: static
+    buildCommand: yarn --frozen-lockfile install && yarn build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
